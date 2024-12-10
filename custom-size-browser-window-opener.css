@@ -1,0 +1,94 @@
+ /* Custom Size Browser Window Opener */
+ /* developed by Tawhidur Rahman Dear, https://www.tawhidurrahmandear.com */
+ /* Live Preview available at https://www.devilhunter.net/p/custom-size-browser-window-opener.html */
+
+
+
+/* Styles */
+ 
+body {
+  font-family: Tahoma, "Trebuchet MS", sans-serif;
+  color: #000000;
+}
+  
+
+/* Custom Size Browser Window Opener Styles */
+
+/* Input & Select Styles */
+.custom-size-browser-window-opener_input, .custom-size-browser-window-opener_select {
+  font-family: Tahoma, "Trebuchet MS", sans-serif;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #6600FF;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: #ffffff;
+}
+
+.custom-size-browser-window-opener_input:focus, .custom-size-browser-window-opener_select:focus {
+  border-color: #6600FF;
+  outline: none;
+}
+
+/* Button Styles */
+.custom-size-browser-window-opener_button {
+  padding: 15px 20px;
+  background-color: #6600FF;
+  color: #ffffff;
+  font-size: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.custom-size-browser-window-opener_button:hover {
+  background-color: #e0ccff;
+  color: #000000;
+  transition: background-color 0.5s ease;
+}
+
+/* Textarea Styles */
+.custom-size-browser-window-opener_textarea {
+font-family: "Roboto Mono", "Source Code Pro", Consolas, Monaco, "Courier New", Courier, "Liberation Mono", monospace;
+  font-size: 14px;
+  width: 100%;
+  height: 400px;
+  padding: 25px;
+  margin-top: 20px;
+  border: 1px solid #6600FF;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: #EEF3FA;
+  resize: none;
+  box-sizing: border-box;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  white-space: pre-wrap;  
+  word-wrap: break-word; 
+  overflow-x: hidden; 
+}
+
+/* Link Styles */
+#custom-size-browser-window-opener p a {
+  font-family: Tahoma, "Trebuchet MS", sans-serif;
+  font-size: 10pt;
+  font-weight: 700;
+  color: #0078d7;
+  text-decoration: none;
+}
+
+#custom-size-browser-window-opener p a:hover {
+  text-decoration: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  #custom-size-browser-window-opener {
+    padding: 25px;
+  }
+
+  .custom-size-browser-window-opener_input, .custom-size-browser-window-opener_select, .custom-size-browser-window-opener_button, .custom-size-browser-window-opener_textarea {
+    font-size: 12px;
+  }
+}
