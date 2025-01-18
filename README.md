@@ -1,4 +1,4 @@
-# Custom Size Browser Window Opener <br>
+# [Custom Size Browser Window Opener](https://www.devilhunter.net/p/custom-size-browser-window-opener.html) <br>
 Open a new Browser Window with Custom Size and any URL <br>
 HTML + JavaScript + CSS <br>
 * developed by Tawhidur Rahman Dear, https://www.tawhidurrahmandear.com <br>
