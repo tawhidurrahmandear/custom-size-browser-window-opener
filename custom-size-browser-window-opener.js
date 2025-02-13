@@ -2,8 +2,8 @@
 // developed by Tawhidur Rahman Dear, https://www.tawhidurrahmandear.com
 // Live Preview available at https://www.devilhunter.net/p/custom-size-browser-window-opener.html
 
-    function openWindow() {
-        const url = document.getElementById('urlInput').value;
+      function openWindow() {
+        let url = document.getElementById('urlInput').value;
         const width = parseInt(document.getElementById('widthInput').value, 10);
         const height = parseInt(document.getElementById('heightInput').value, 10);
         const errorMessage = document.getElementById('errorMessage');
@@ -15,13 +15,18 @@
             return;
         }
 
-        // Estimate the size of the window decorations
-        const borderWidth = 17; // Default value for most browsers
-        const titleBarHeight = 0; // Default height for the title bar in most browsers
+        // Handle local files also by ensuring correct format
+        if (url.startsWith('file://') || url.match(/^[a-zA-Z]:\\/)) {
+            url = url.replace(/\\/g, '/');
+            if (!url.startsWith('file://')) {
+                url = 'file:///' + url;
+            }
+        }
 
+        const borderWidth = 17;
+        const titleBarHeight = 0;
         const totalWidth = width + borderWidth;
         const totalHeight = height + titleBarHeight;
-
         const left = (window.innerWidth / 2) - (totalWidth / 2);
         const top = (window.innerHeight / 2) - (totalHeight / 2);
 
