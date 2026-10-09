@@ -5,34 +5,67 @@
 <!-- developed by Tawhidur Rahman Dear, https://www.tawhidurrahmandear.com -->
 <!-- Live Preview available at https://www.devilhunter.net/p/custom-size-browser-window-opener.html -->
 
-<p style="text-align: justify;"><span style="font-family: Ubuntu;">Open a new Browser Window with Custom Size and any URL</span></p>
-	
-<br>
-<br>
 
-<p><span style="font-family: Ubuntu; font-size: 30px;">URL:</span></p>
-<br>
-<p><input class="custom-size-browser-window-opener_input" id="urlInput" required="" type="text" /></p>
-<br>
-<p><span style="font-family: Ubuntu; font-size: 30px;">Width:</span></p>
-<br>
-<p><input class="custom-size-browser-window-opener_input" id="widthInput" required="" type="number" /></p>
-<br>
-<p><span style="font-family: Ubuntu; font-size: 30px;">Height:</span></p>
-<br>
-<p><input class="custom-size-browser-window-opener_input" id="heightInput" required="" type="number" /></p>
-<br>
-<p id="errorMessage" style="color: red; font-family: Ubuntu;"></p>
-<p><button class="custom-size-browser-window-opener_button" onclick="openWindow()">Open Window</button></p>
 
-<br>
-<br>
-<br>
+  <p>Open a new Browser Window with Custom Size and any URL</p>
 
-<div style="text-align: justify;"><span style="color: black;"><b><span face="tahoma,arial,helvetica,sans-serif" style="font-size: 12pt;">Note : </span></b></span></div>
+  <p>URL:</p>
+  <p><input class="custom-size-browser-window-opener_input" id="urlInput" type="text" placeholder="https://example.com/page-url or D:\folder\local-html-page.html" required></p>
 
-<ul style="list-style-type: square;">
-<li style="text-align: justify;"><span face="tahoma, arial, helvetica, sans-serif" style="color: black; font-size: 12pt;">If you want to take Screenshot using Mozilla Firefox, press <b>Ctrl + Shift + S</b> in keyboard.</span></li>
-<li style="text-align: justify;"><span face="tahoma, arial, helvetica, sans-serif" style="color: black; font-size: 12pt;">If the output is not accurate, readjust width and height. For example, You wanted 500X400, but if the Output is 495X400, then input 505X400. If the window width or height is bigger than monitor size, then carefully adjust the size. </span></li>
-</ul>
+  <p>Size by:</p>
+  <div>
+    <label><input type="radio" name="sizeMode" value="size" checked> Width / Height</label>
+    <label><input type="radio" name="sizeMode" value="ratio"> Aspect Ratio</label>
+  </div>
+  <br>
 
+  <!-- Mode 1: width / height -->
+  <div id="sizePanel">
+    <label>Width:</label>
+    <input class="custom-size-browser-window-opener_input" id="widthInput" type="number" min="1" placeholder="e.g. 1280">
+
+    <label>Height:</label>
+    <input class="custom-size-browser-window-opener_input" id="heightInput" type="number" min="1" placeholder="e.g. 720">
+  </div>
+
+  <!-- Mode 2: aspect ratio -->
+  <div id="ratioPanel" hidden>
+    <label>Ratio:</label>
+    <select class="custom-size-browser-window-opener_input" id="ratioPreset">
+      <option value="16:9" selected>16:9 (Widescreen)</option>
+      <option value="16:10">16:10</option>
+      <option value="21:9">21:9 (Ultrawide)</option>
+      <option value="4:3">4:3</option>
+      <option value="3:2">3:2</option>
+      <option value="1:1">1:1 (Square)</option>
+      <option value="9:16">9:16 (Portrait)</option>
+      <option value="custom">Custom…</option>
+    </select>
+
+    <div id="customRatioRow" hidden>
+      <input class="custom-size-browser-window-opener_input" id="ratioW" type="number" min="1" step="any" placeholder="W">
+      <span>:</span>
+      <input class="custom-size-browser-window-opener_input" id="ratioH" type="number" min="1" step="any" placeholder="H">
+    </div>
+	<br>
+    <label>Size: <span id="scaleValue">100</span>% of the largest window that fits your screen</label>
+	<br>
+    <input id="scaleInput" type="range" min="10" max="100" value="100" step="1">
+	<br>
+  </div>
+
+  <p id="screenInfo"></p>
+  <p id="previewInfo"></p>
+  <p id="errorMessage"></p>
+  
+  <p><button class="custom-size-browser-window-opener_button" id="openBtn" type="button">Open Window</button></p>
+
+    <strong>Note:</strong>
+    <ul>
+      <li>Width / Height and Ratio sizes apply to the <strong>page area</strong> (inside the browser's toolbar and borders). The tool measures the window frame and corrects it automatically.</li>
+      <li>A window can never be larger than your monitor's usable area. In Ratio mode the window is always scaled down to fit; in Width / Height mode a too-large size shows an error with the maximum allowed.</li>
+      <li>Local files (file:///, D:\path\file.html) are supported. Browsers only allow opening them if <i>this page</i> is also opened as a local file, not from a website.</li>
+      <li>Allow pop-ups for this page if the window does not open.</li>
+      <li>To take a screenshot in Mozilla Firefox, press <strong>Ctrl + Shift + S</strong>.</li>
+      <li>If the output is not accurate, readjust width and height. For example, You wanted 500X400, but if the Output is 495X400, then input 505X400. If the window width or height is bigger than monitor size, then carefully adjust the size.</li>
+    </ul>
